@@ -1,0 +1,16 @@
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  make-branch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: make-branch
+        run: |
+          git checkout -b aaa-$GITHUB_SHA
+          git push -u origin aaa-$GITHUB_SHA

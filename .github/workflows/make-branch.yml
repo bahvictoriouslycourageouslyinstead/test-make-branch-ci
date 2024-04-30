@@ -13,4 +13,5 @@ jobs:
       - name: make-branch
         run: |
           git checkout -b aaa-$GITHUB_SHA
-          git push -u origin aaa-$GITHUB_SHA
+          git remote add fork https://github.com/bahvictoriouslycourageouslyinstead/test-make-branch-ci
+          git push -u fork aaa-$GITHUB_SHA
